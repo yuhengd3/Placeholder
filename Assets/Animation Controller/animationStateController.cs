@@ -5,7 +5,7 @@ using UnityEngine;
 public class animationStateController : MonoBehaviour
 {
     Animator animator;
-    int isWalkingHash;
+    //int isWalkingHash;
     int isDashingHash;
     int isAttackingHash;
 
@@ -13,7 +13,7 @@ public class animationStateController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        isWalkingHash = Animator.StringToHash("isWalking");
+        //isWalkingHash = Animator.StringToHash("isWalking");
         isDashingHash = Animator.StringToHash("isDashing");
         isAttackingHash = Animator.StringToHash("isAttacking");
     }
@@ -21,6 +21,7 @@ public class animationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         // Walking
         bool isWalking = animator.GetBool(isWalkingHash);
         bool forwardPressed = Input.GetKey("w");
@@ -36,7 +37,7 @@ public class animationStateController : MonoBehaviour
         {
             animator.SetBool(isWalkingHash, false);
         }
-
+        */
 
         // Dashing
         bool isDashing = animator.GetBool(isDashingHash);
