@@ -15,7 +15,7 @@ public class animationStateController : MonoBehaviour
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
         isDashingHash = Animator.StringToHash("isDashing");
-        isAttackingHash = Animator.StringToHash("isAttacking");
+        //isAttackingHash = Animator.StringToHash("isAttacking");
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class animationStateController : MonoBehaviour
             animator.SetBool(isDashingHash, false);
         }
 
-
+        /*
         // Attacking
         bool isAttacking = animator.GetBool(isAttackingHash);
         bool leftButtonPressed = Input.GetMouseButtonDown(0);
@@ -64,6 +64,6 @@ public class animationStateController : MonoBehaviour
         {
             animator.SetBool(isAttackingHash, false);
         }
-
+        */
     }
 }
