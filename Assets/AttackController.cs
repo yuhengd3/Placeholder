@@ -9,6 +9,8 @@ public class AttackController : MonoBehaviour
 
     public UnityEvent enemyHit;
     public UnityEvent weaponHit;
+    public UnityEvent drawWeapon;
+    public UnityEvent holsterWeapon;
 
     // Start is called before the first frame update
     void Start()
