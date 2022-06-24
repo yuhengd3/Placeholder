@@ -43,6 +43,7 @@ public class Combat : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
         {
             hit3 = false;
+            AttackController.current.holsterWeapon.Invoke();
             //anim.SetBool("hit3", false);
             noOfClicks = 0;
         }
@@ -76,6 +77,7 @@ public class Combat : MonoBehaviour
         if (noOfClicks == 1)
         {
             hit1 = true;
+            AttackController.current.drawWeapon.Invoke();
             //anim.SetBool("hit1", true);
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
@@ -84,6 +86,7 @@ public class Combat : MonoBehaviour
         {
             hit1 = false;
             hit2 = true;
+            AttackController.current.drawWeapon.Invoke();
             //anim.SetBool("hit1", false);
             //anim.SetBool("hit2", true);
         }
@@ -91,6 +94,7 @@ public class Combat : MonoBehaviour
         {
             hit2 = false;
             hit3 = true;
+            AttackController.current.drawWeapon.Invoke();
             //anim.SetBool("hit2", false);
             //anim.SetBool("hit3", true);
         }
