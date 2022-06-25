@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -201,7 +201,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.09095475, y: -0.0053124903, z: 0.00048520605, w: 0.9958408}
+  m_LocalRotation: {x: 0.09095418, y: -0.006339595, z: 0.00057902746, w: 0.9958347}
   m_LocalPosition: {x: 111.07, y: 186.99, z: -25.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2033,16 +2033,71 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_model
       objectReference: {fileID: 0}
+    - target: {fileID: 5330200388048275002, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99583477
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388048275002, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09095418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388048275002, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.006339593
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388048275002, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00057902414
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388168713453, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98871213
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388168713453, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.149523
+      objectReference: {fileID: 0}
     - target: {fileID: 5330200388168713453, guid: d916bd49365b2264081b554f29f93c41,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.007911359
+      value: 0.009440722
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388168713453, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0014277207
       objectReference: {fileID: 0}
     - target: {fileID: 5330200388517772831, guid: d916bd49365b2264081b554f29f93c41,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 5330200388525287758, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9978339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388525287758, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.06420636
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388525287758, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.014290251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330200388525287758, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0009195166
+      objectReference: {fileID: 0}
     - target: {fileID: 5652603014741842312, guid: d916bd49365b2264081b554f29f93c41,
         type: 3}
       propertyPath: m_RootOrder
@@ -2097,6 +2152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285908816389867078, guid: d916bd49365b2264081b554f29f93c41,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d916bd49365b2264081b554f29f93c41, type: 3}
