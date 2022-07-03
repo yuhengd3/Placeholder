@@ -22,6 +22,7 @@ public class EnemyOnHit : MonoBehaviour
 
     private void Start()
     {
+        AttackController.current.enemyHit += hit;
         e = GetComponent<enemy>();
         rb = GetComponent<Rigidbody>();
         //rb.velocity = new Vector3(1000, 0, 1000);
@@ -60,17 +61,22 @@ public class EnemyOnHit : MonoBehaviour
     //}
 
 
-    public void hit()
+    public void hit(int id_)
     {
-        --health;
-        ani.SetTrigger(hitHash);
-        Vector3 direction = -(player.position - transform.position).normalized;
-        //transform.position += direction * scale;
-        Vector3 force = direction * scale;
-        rb.AddForce(force, ForceMode.Force);
-        //rb.velocity = force;
-        e.timer = e.attackPeriod;
-        e.state = enemy.State.chase;
+        print("reveived id:" + id_);
+        if (id_ == e.id)
+        {        
+            --health;
+            ani.SetTrigger(hitHash);
+            Vector3 direction = -(player.position - transform.position).normalized;
+            //transform.position += direction * scale;
+            Vector3 force = direction * scale;
+            //rb.AddForce(force, ForceMode.Impulse);
+            //rb.velocity = force;
+            transform.position += force;
+            e.timer = e.attackPeriod;
+            e.state = enemy.State.chase;
+        }   
     }
 
 }

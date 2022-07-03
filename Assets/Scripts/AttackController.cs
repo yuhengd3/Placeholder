@@ -7,13 +7,13 @@ public class AttackController : MonoBehaviour
 {
     public static AttackController current;
 
-    public UnityEvent enemyHit;
+    public event UnityAction<int> enemyHit;
     public UnityEvent weaponHit;
     public UnityEvent drawWeapon;
     public UnityEvent holsterWeapon;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         current = this;
     }
@@ -22,6 +22,14 @@ public class AttackController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void EnemyHit(int id)
+    {
+        if(enemyHit != null)
+        {
+            enemyHit(id);
+        }
     }
 
 }

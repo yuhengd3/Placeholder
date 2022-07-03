@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
+    public GameObject weap;
     private Animator anim;
     public float cooldownTime = 2f;
     private float nextFireTime = 0f;
@@ -121,7 +122,9 @@ public class Combat : MonoBehaviour
         {
             if(hit1 || hit2 || hit3)
             {
-                AttackController.current.enemyHit.Invoke();
+                int id = weap.GetComponent<Weapon>().hitID;
+                print("id: " + id);
+                AttackController.current.EnemyHit(id);
                 timer = period;
             }
         }
