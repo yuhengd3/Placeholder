@@ -774,7 +774,6 @@ GameObject:
   - component: {fileID: 5330200388517772831}
   - component: {fileID: 7667450065821820966}
   - component: {fileID: 5330200387557487965}
-  - component: {fileID: 7023153661122816654}
   m_Layer: 6
   m_Name: player_model
   m_TagString: Player
@@ -890,19 +889,6 @@ MonoBehaviour:
   cooldownTime: 0.8
   timer: 0
   period: 1.5
---- !u!114 &7023153661122816654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4988234471318553394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9bfadef8a070754bb483de80ecdf216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inv: {fileID: 11400000, guid: d6bc8b93266a7db499056058672bcb9c, type: 2}
 --- !u!1 &5089848734951165439
 GameObject:
   m_ObjectHideFlags: 0
