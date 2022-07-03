@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemy : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class enemy : MonoBehaviour
         chase,
         attack
     }
-
+    public int id;
     public State state;
     private Animator ani;
+    private NavMeshAgent nav;
     private Vector3 original;
     private FieldOfView fov;
     private static int meleeHash = Animator.StringToHash("Melee");
@@ -42,11 +44,16 @@ public class enemy : MonoBehaviour
         state = State.roam;
         ani = GetComponent<Animator>();
         fov = GetComponent<FieldOfView>();
+        nav = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        {
+            state = State.attack;
+        }
         switch (state)
         {
             case State.roam:
@@ -57,7 +64,8 @@ public class enemy : MonoBehaviour
                 }
                 break;
             case State.chase:
-                chase(player.position);
+                //chase(player.position);
+                aiChase(player.position);
                 checkDistance();
                 break;
             case State.attack:
@@ -113,12 +121,16 @@ public class enemy : MonoBehaviour
     {
         //Debug.Log("roam");
         float d = Vector3.Distance(original, this.transform.position);
-        ani.SetBool(walkHash, false);
+        if(d <= error)
+        {
+            ani.SetBool(walkHash, false);
+            nav.enabled = false;
+        }
         if (d > error)
         {
             Debug.Log("d: " + d);
             //Debug.Log("return");
-            chase(original);
+            aiChase(original);
         }
     }
 
@@ -138,12 +150,13 @@ public class enemy : MonoBehaviour
         {
             state = State.chase;
         }
-        //Debug.Log(distance);
+        //Debug.Log(distance + "!");
     }
 
 
     private void attack()
     {
+        nav.enabled = false;
         ani.SetBool(walkHash, false);
         face(player.position);
         if (face_)
@@ -161,4 +174,15 @@ public class enemy : MonoBehaviour
         }
         timer -= Time.deltaTime;
     }
+
+    private void aiChase(Vector3 other)
+    {
+        ani.SetBool(rightHash, false);
+        ani.SetBool(leftHash, false);
+        nav.enabled = true;
+        float distance = Vector3.Distance(this.transform.position, player.position);
+        nav.SetDestination(other);
+        ani.SetBool(walkHash, true);
+    }
+
 }

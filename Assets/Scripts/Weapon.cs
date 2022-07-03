@@ -8,6 +8,8 @@ public class Weapon : MonoBehaviour
     public float coolDownTime = 1.5f;
     public float timer = 1.5f;
 
+    public int hitID;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class Weapon : MonoBehaviour
         {
             if (other.gameObject.tag == "Enemy")
             {
+                hitID = other.GetComponent<enemy>().id;
                 AttackController.current.weaponHit.Invoke();
                 Debug.Log("hiiiiiiiiit");
                 //if (timer >= coolDownTime)
