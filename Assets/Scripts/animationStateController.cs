@@ -7,7 +7,7 @@ public class animationStateController : MonoBehaviour
     Animator animator;
     int isWalkingHash;
     int isDashingHash;
-    int isAttackingHash;
+    int isJumpingHash;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class animationStateController : MonoBehaviour
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
         isDashingHash = Animator.StringToHash("isDashing");
-        //isAttackingHash = Animator.StringToHash("isAttacking");
+        isJumpingHash = Animator.StringToHash("isJumping");
     }
 
     // Update is called once per frame
@@ -51,19 +51,21 @@ public class animationStateController : MonoBehaviour
             animator.SetBool(isDashingHash, false);
         }
 
-        /*
-        // Attacking
-        bool isAttacking = animator.GetBool(isAttackingHash);
-        bool leftButtonPressed = Input.GetMouseButtonDown(0);
+        
+        // Jumping
+        bool isJumping = animator.GetBool(isJumpingHash);
+        bool spaceButtonPressed = Input.GetButtonDown("Jump");
 
-        if (!isAttacking && leftButtonPressed)
+        if (!isJumping && spaceButtonPressed)
         {
-            animator.SetBool(isAttackingHash, true);
+            animator.SetBool(isJumpingHash, true);
+            animator.SetBool(isWalkingHash, false);
         }
-        if (isAttacking && !leftButtonPressed)
+        if (isJumping && !spaceButtonPressed)
         {
-            animator.SetBool(isAttackingHash, false);
+            animator.SetBool(isJumpingHash, false);
         }
-        */
+        
+        
     }
 }
