@@ -23,8 +23,9 @@ public class ThirdPersonMovementScript : MonoBehaviour
 
     // Jump
     Vector3 velocity;
-    private float jumpSpeed = 3f;
-    private float jumpButtonGracePeriod = 3f;
+    public float toGroundDistance;
+    public float jumpSpeed = 3f;
+    public float jumpButtonGracePeriod = 3f;
     public float gravity = -9.8f;
     //public Transform groundCheck;
     //public float groundDist;
@@ -46,9 +47,36 @@ public class ThirdPersonMovementScript : MonoBehaviour
         originalStepOffset = controller.stepOffset;
     }
 
+    Vector3 initialPosition = new Vector3();
+
+    IEnumerator JumpTimer()
+    {
+        /*
+        while(controller.isGrounded)
+        {
+            yield return new WaitForSeconds(1);
+            yield return new WaitForEndOfFrame();
+        }*/
+        initialPosition = transform.position;
+        yield return new WaitForSeconds(jumpButtonGracePeriod);
+        yield return new WaitWhile(()=>!grounded);
+        animator.SetBool("isJumping", false);
+    }
+
+    void IsGrounded()
+    {
+        RaycastHit hit;
+        grounded = Physics.Raycast(transform.position, -transform.up, out hit, toGroundDistance, 1 << LayerMask.NameToLayer("Floor"));
+        Debug.DrawLine(transform.position, transform.position - Vector3.down * toGroundDistance, Color.red, 0f);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
+        grounded = Physics.Raycast(transform.position, -transform.up, out hit, toGroundDistance);
+        Debug.Log("isGrounded" + grounded);
+
         // Sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -73,24 +101,34 @@ public class ThirdPersonMovementScript : MonoBehaviour
 
             // WASD moving
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * currentSpeed * Time.deltaTime);
+
+            if (!jumping)
+            {
+                controller.Move(moveDir.normalized * currentSpeed * Time.deltaTime);
+            }
+            else
+            {
+                // position = initial position + initial velocity * times - 0.5 * acceleration * time^2
+                float y = initialPosition.y + jumpSpeed * Time.deltaTime - 0.5f * gravity * Time.deltaTime * Time.deltaTime;
+                Vector3 move = new Vector3(moveDir.normalized.x * currentSpeed, y, moveDir.normalized.z * currentSpeed);
+                Debug.Log(move);
+                controller.Move(move * Time.deltaTime);
+            }
         }
 
-        velocity.y += gravity * Time.deltaTime;
-        
-        if (controller.isGrounded)
-        {
-            Debug.Log("isGrounded");
-            lastGroundedTime = Time.time;
-        }
+        //velocity.y += gravity * Time.deltaTime;
+
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jump");
-            jumpButtonPressedTime = Time.time;
+            StartCoroutine(JumpTimer());
+            animator.SetBool("isJumping", true);
         }
+
+        /*
         if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
         //if (controller.isGrounded)
         {
+
             controller.stepOffset = originalStepOffset;
             velocity.y = -0.5f;
             animator.SetBool("isGrounded", true);
@@ -120,7 +158,7 @@ public class ThirdPersonMovementScript : MonoBehaviour
                 animator.SetBool("isFalling", true);
             }
         }
-        
+        */
         
         /*
         // Jump
@@ -142,6 +180,6 @@ public class ThirdPersonMovementScript : MonoBehaviour
         }
         //rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
         */
-        controller.Move(velocity * Time.deltaTime);
+        //controller.Move(velocity * Time.deltaTime);
     }
 }
