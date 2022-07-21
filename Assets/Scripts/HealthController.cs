@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-  public int maxHealth = 3;
+  public int maxHealth;
   public int currentHealth;
 
   public Health health;
