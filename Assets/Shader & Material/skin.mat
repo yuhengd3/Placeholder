@@ -107,7 +107,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Shadow_Offset: 0.1
-    - _Smoothness: 0.902
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Specular_Range: 1
@@ -115,9 +115,9 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _contour_offset: -0.58
+    - _contour_offset: -1
     - _shade_offset: 0.542
-    - _specular_range: 0.98
+    - _specular_range: 0.902
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.5921569, g: 0.44705886, b: 0.37254903, a: 1}
