@@ -17,9 +17,9 @@ public class HealthController : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space)) {
+    if (Input.GetKeyDown("k")) {
       DecreaseHealth(1);
-    } else if (Input.GetKeyDown(KeyCode.Return)) {
+    } else if (Input.GetKeyDown("l")) {
       IncreaseHealth(1);
     }
   }

@@ -21,7 +21,7 @@ public class BossHealthController : MonoBehaviour
     if (Input.GetKeyDown("o")) {
       Debug.Log("O key was pressed.");
       DecreaseHealth(10);
-    } else if (Input.GetKey("p")) {
+    } else if (Input.GetKeyDown("p")) {
       Debug.Log("P key was pressed.");
       IncreaseHealth(10);
     }
