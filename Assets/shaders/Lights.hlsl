@@ -52,7 +52,7 @@ float3 CustomLightHandling(CustomLightingData d, Light light){
     float contour = ceil(saturate(1 - _contour) * radiance);
     float diffuse = _diffuse + d.shadeOffset;
 
-    float3 color = (d.albedo + contour) * radiance + specular;
+    float3 color = (d.albedo * diffuse + contour) * radiance + specular;
 
     return color;
 }
