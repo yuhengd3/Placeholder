@@ -124,9 +124,9 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _contour_offset: -0.775
-    - _shade_offset: 0.105
-    - _specular_range: 0.999
+    - _contour_offset: -1
+    - _shade_offset: 0
+    - _specular_range: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
