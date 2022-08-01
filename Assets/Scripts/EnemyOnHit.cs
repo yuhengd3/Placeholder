@@ -13,7 +13,7 @@ public class EnemyOnHit : MonoBehaviour
     private static int dieHash_ = Animator.StringToHash("Die_");
     public bool die = false;
 
-    private int health = 4;
+    public int health = 4;
     private float deathTime = 1.5f;
     private float timer = 0;
 

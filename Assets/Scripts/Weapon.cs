@@ -27,7 +27,10 @@ public class Weapon : MonoBehaviour
         {
             if (other.gameObject.tag == "Enemy")
             {
-                hitID = other.GetComponent<enemy>().id;
+                if (other.GetComponent<enemy>())
+                {
+                    hitID = other.GetComponent<enemy>().id;
+                }
                 AttackController.current.weaponHit.Invoke();
                 Debug.Log("hiiiiiiiiit");
                 //if (timer >= coolDownTime)

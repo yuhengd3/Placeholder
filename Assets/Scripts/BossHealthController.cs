@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class BossHealthController : MonoBehaviour
 {
-  public int maxBossHealth;
+  public int maxBossHealth = 100;
   public int currentBossHealth;
 
   public BossHealth bossHealth;
 
-  void Start()
+    public static BossHealthController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
   {
     currentBossHealth = maxBossHealth;
     bossHealth.setBossMaxHealth(maxBossHealth);
@@ -27,7 +34,7 @@ public class BossHealthController : MonoBehaviour
     }
   }
 
-  void DecreaseHealth(int value) {
+  public void DecreaseHealth(int value) {
     currentBossHealth -= value;
     if (currentBossHealth < 0) {
       currentBossHealth = 0;
@@ -35,7 +42,7 @@ public class BossHealthController : MonoBehaviour
     bossHealth.setBossHealth(currentBossHealth);
   }
 
-  void IncreaseHealth(int value) {
+  public void IncreaseHealth(int value) {
     currentBossHealth += value;
     if (currentBossHealth > maxBossHealth) {
       currentBossHealth = maxBossHealth;
