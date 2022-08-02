@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-  public int maxHealth = 3;
+  public int maxHealth;
   public int currentHealth;
 
   public Health health;
@@ -17,9 +17,9 @@ public class HealthController : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space)) {
+    if (Input.GetKeyDown("k")) {
       DecreaseHealth(1);
-    } else if (Input.GetKeyDown(KeyCode.Return)) {
+    } else if (Input.GetKeyDown("l")) {
       IncreaseHealth(1);
     }
   }

@@ -129,4 +129,17 @@ public class Combat : MonoBehaviour
             }
         }
     }
+
+    public void bossHit()
+    {
+        if(timer <= 0)
+        {
+            if(hit1 || hit2 || hit3)
+            {
+                print("huhu");
+                AttackController.current.EnemyHit(10);
+                timer = period;
+            }
+        }
+    }
 }
