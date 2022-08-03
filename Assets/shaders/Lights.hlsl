@@ -43,7 +43,8 @@ float3 CustomGlobalIllumination(CustomLightingData d){
 }
 
 float3 CustomLightHandling(CustomLightingData d, Light light){
-    float3 radiance = light.color * (light.shadowAttenuation * light.distanceAttenuation); //not sure if this is useful
+
+    float3 radiance = light.color * (light.shadowAttenuation * light.distanceAttenuation);
 
     float _diffuse = ceil(dot(d.normalWS, light.direction));
     float specularDot = dot(d.normalWS, light.direction) - d.specularRange;
