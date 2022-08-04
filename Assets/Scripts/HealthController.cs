@@ -24,7 +24,7 @@ public class HealthController : MonoBehaviour
     }
   }
 
-  void DecreaseHealth(int value) {
+  public void DecreaseHealth(int value) {
     currentHealth -= value;
     if (currentHealth < 0) {
       currentHealth = 0;
@@ -32,7 +32,7 @@ public class HealthController : MonoBehaviour
     health.setHealth(currentHealth);
   }
 
-  void IncreaseHealth(int value) {
+  public void IncreaseHealth(int value) {
     currentHealth += value;
     if (currentHealth > maxHealth) {
       currentHealth = maxHealth;
