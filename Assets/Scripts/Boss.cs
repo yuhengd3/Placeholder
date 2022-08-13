@@ -61,6 +61,7 @@ public class Boss : MonoBehaviour
                 break;
             case State.meleeAttack:
                 meleeAttack();
+                detectAttack();
                 checkDistance();
                 break;
             case State.rangeAttack:
@@ -101,7 +102,7 @@ public class Boss : MonoBehaviour
             ani.SetBool(rightHash, false);
             face_ = true;
         }
-        Debug.Log(difference);
+        //Debug.Log(difference);
     }
 
     private void checkDistance()
@@ -122,6 +123,123 @@ public class Boss : MonoBehaviour
         //Debug.Log(distance + "!");
     }
 
+    public Transform leftHand;
+    public Transform rightHand;
+
+    private void onDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(leftHand.position, 10f);
+        Gizmos.DrawSphere(rightHand.position, 10f);
+    }
+
+    private void detectAttack()
+    {
+        Debug.Log("Detect Attack");
+        if(ani.GetCurrentAnimatorStateInfo(0).IsName("Attack 1"))
+        {
+            Collider[] hitL = Physics.OverlapSphere(leftHand.position, 10f);
+            Collider[] hitR = Physics.OverlapSphere(rightHand.position, 10f);
+            Debug.Log("Detect Attack 11111111");
+            foreach (Collider hit in hitL)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+                
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+
+            foreach (Collider hit in hitR)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+
+        } 
+        else if(ani.GetCurrentAnimatorStateInfo(0).IsName("Attack 2"))
+        {
+            Collider[] hitL = Physics.OverlapSphere(leftHand.position, 10f);
+            Collider[] hitR = Physics.OverlapSphere(rightHand.position, 10f);
+            Debug.Log("Detect Attack 2222222");
+            foreach (Collider hit in hitL)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+
+            foreach (Collider hit in hitR)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+        }
+        else if (ani.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
+        {
+            Collider[] hitL = Physics.OverlapSphere(leftHand.position, 10f);
+            Collider[] hitR = Physics.OverlapSphere(rightHand.position, 10f);
+            Debug.Log("Detect Attack 33333333");
+            foreach (Collider hit in hitL)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+
+            foreach (Collider hit in hitR)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+        }
+        else if (ani.GetCurrentAnimatorStateInfo(0).IsName("Attack 4"))
+        {
+            Collider[] hitL = Physics.OverlapSphere(leftHand.position, 10f);
+            Collider[] hitR = Physics.OverlapSphere(rightHand.position, 10f);
+            Debug.Log("Detect Attack 4444444");
+            foreach (Collider hit in hitL)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+
+            foreach (Collider hit in hitR)
+            {
+                Combat breakable = hit.gameObject.GetComponent<Combat>();
+
+                if (breakable)
+                {
+                    AttackController.current.bossHit.Invoke();
+                }
+            }
+        }
+
+
+    }
 
     private void meleeAttack()
     {
@@ -134,6 +252,7 @@ public class Boss : MonoBehaviour
             if (timer <= 0f)
             {
                 Debug.Log("attack");
+
                 int random = Random.Range(0, attacks.Length);
                 Debug.Log(random);
                 ani.SetTrigger(attacks[random]);

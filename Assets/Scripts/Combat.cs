@@ -15,10 +15,12 @@ public class Combat : MonoBehaviour
     private bool hit1 = false;
     private bool hit2 = false;
     private bool hit3 = false;
+    private bool isHit = false;
 
     private int hit1Hash = Animator.StringToHash("hit1");
     private int hit2Hash = Animator.StringToHash("hit2");
     private int hit3Hash = Animator.StringToHash("hit3");
+    private int isHitHash = Animator.StringToHash("isHit");
 
     //used for attack period detection, change to private later
     public float timer = 0f;
@@ -28,24 +30,22 @@ public class Combat : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+
     void Update()
     {
         timer -= Time.deltaTime;
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         {
             hit1 = false;
-            //anim.SetBool("hit1", false);
         }
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             hit2 = false;
-            //anim.SetBool("hit2", false);
         }
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
         {
             hit3 = false;
             AttackController.current.holsterWeapon.Invoke();
-            //anim.SetBool("hit3", false);
             noOfClicks = 0;
         }
         anim.SetBool(hit1Hash, hit1);
@@ -68,6 +68,8 @@ public class Combat : MonoBehaviour
 
             }
         }
+
+        isHit = anim.GetBool(isHitHash);
     }
 
     void OnClick()
@@ -79,7 +81,6 @@ public class Combat : MonoBehaviour
         {
             hit1 = true;
             AttackController.current.drawWeapon.Invoke();
-            //anim.SetBool("hit1", true);
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
@@ -88,16 +89,12 @@ public class Combat : MonoBehaviour
             hit1 = false;
             hit2 = true;
             AttackController.current.drawWeapon.Invoke();
-            //anim.SetBool("hit1", false);
-            //anim.SetBool("hit2", true);
         }
         if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             hit2 = false;
             hit3 = true;
             AttackController.current.drawWeapon.Invoke();
-            //anim.SetBool("hit2", false);
-            //anim.SetBool("hit3", true);
         }
         anim.SetBool(hit1Hash, hit1);
         anim.SetBool(hit2Hash, hit2);
@@ -140,6 +137,20 @@ public class Combat : MonoBehaviour
                 AttackController.current.EnemyHit(10);
                 timer = period;
             }
+        }
+    }
+
+    // when the player is hit, trigger the event
+    public void playerHit()
+    {
+        print("player got hit!");
+        if (!isHit)
+        {
+            anim.SetBool(isHitHash, true);
+        }
+        if (isHit)
+        {
+            anim.SetBool(isHitHash, false);
         }
     }
 }

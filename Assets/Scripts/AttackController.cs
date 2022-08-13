@@ -12,6 +12,8 @@ public class AttackController : MonoBehaviour
     public UnityEvent drawWeapon;
     public UnityEvent holsterWeapon;
 
+    public UnityEvent bossHit;
+
     // Start is called before the first frame update
     void Awake()
     {
