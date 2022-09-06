@@ -16,8 +16,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'LeftFoot' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -25,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -81,82 +80,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: minion_model(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Armature
-      parentName: minion_model(Clone)
-      position: {x: -0, y: 0.34209374, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: control
-      parentName: Armature
-      position: {x: -0, y: 0, z: -0.0013894275}
-      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: body
-      parentName: control
-      position: {x: -0, y: 0.0013720252, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arm.l
-      parentName: body
-      position: {x: -0, y: 0.004675446, z: -0.0036632752}
-      rotation: {x: 0.7010392, y: -0.09243473, z: 0.7010391, w: -0.09243408}
-      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999905}
-    - name: arm.l_end
-      parentName: arm.l
-      position: {x: -0, y: 0.0046351445, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arm.r
-      parentName: body
-      position: {x: -3.2025368e-10, y: 0.0046754465, z: 0.0036632752}
-      rotation: {x: 0.70103925, y: 0.09243439, z: 0.7010391, w: 0.09243416}
-      scale: {x: 1, y: 1.0000001, z: 1.0000024}
-    - name: arm.r_end
-      parentName: arm.r
-      position: {x: -0, y: 0.0046351454, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: head
-      parentName: body
-      position: {x: -0, y: 0.004982483, z: 0}
-      rotation: {x: 0, y: -0.000000119209275, z: -0, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: head_end
-      parentName: head
-      position: {x: -0, y: 0.0033568623, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: leg.l
-      parentName: control
-      position: {x: -0, y: 0.0026752632, z: -0.0021319955}
-      rotation: {x: 0.7071068, y: 0.000000053385072, z: 0.7071067, w: -0.000000053385083}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: leg.l_end
-      parentName: leg.l
-      position: {x: -0, y: 0.004584306, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: leg.r
-      parentName: control
-      position: {x: -1.8638496e-10, y: 0.0026752632, z: 0.0021319955}
-      rotation: {x: 0.7071068, y: -0.000000053385072, z: 0.7071067, w: 0.000000053385083}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: leg.r_end
-      parentName: leg.r
-      position: {x: -0, y: 0.004584306, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Cube.005
-      parentName: minion_model(Clone)
-      position: {x: -0, y: 0.23277995, z: 0}
-      rotation: {x: 0.7071068, y: 0.7071067, z: 0.000000030908616, w: 0.000000030908623}
-      scale: {x: 205.66454, y: 205.66454, z: 221.88647}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -165,9 +89,9 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Armature
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

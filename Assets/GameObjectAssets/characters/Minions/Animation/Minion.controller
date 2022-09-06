@@ -95,7 +95,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 252d0f6643d4c4d60ac96cce58c168ed, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0d93afd18ae704cbca7c70f0e0f9829b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -370,7 +370,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy
+  m_Name: Minion
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Melee
@@ -639,7 +639,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: afd043e06c2df499a89c55b4b6ecc01a, type: 2}
+  m_Motion: {fileID: 7400000, guid: d5714b79e64dd4580adfd085a107261b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

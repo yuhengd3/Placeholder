@@ -4,9 +4,6 @@ ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  - first:
       74: -1422011007694221501
     second: Armature|ArmatureAction.001
   - first:
@@ -25,8 +22,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'LeftLowerLeg' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -34,7 +30,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -90,72 +86,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: minions_attack(Clone)
-      parentName: 
-      position: {x: -0, y: 0.34209374, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: control
-      parentName: minions_attack(Clone)
-      position: {x: 0.00019717173, y: 0, z: -0.0012591812}
-      rotation: {x: 0.5486825, y: 0.49079382, z: 0.49777934, w: 0.45856813}
-      scale: {x: 0.99999994, y: 1, z: 1}
-    - name: leg.l
-      parentName: control
-      position: {x: 1.8626451e-11, y: 0.0026752632, z: -0.0021319955}
-      rotation: {x: 0.7046869, y: -0.0056652175, z: 0.7094239, w: -0.010100738}
-      scale: {x: 0.99999994, y: 1, z: 1}
-    - name: leg.l_end
-      parentName: leg.l
-      position: {x: -0, y: 0.004584306, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: leg.r
-      parentName: control
-      position: {x: -2.0489097e-10, y: 0.0026752632, z: 0.0021319953}
-      rotation: {x: 0.70552725, y: 0.047236957, z: 0.7055272, w: 0.047237147}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: leg.r_end
-      parentName: leg.r
-      position: {x: -0, y: 0.004584306, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: body
-      parentName: control
-      position: {x: -1.1641532e-12, y: 0.0013720251, z: 1.7462298e-12}
-      rotation: {x: 0.0000000013390836, y: -0.000000002940162, z: -0.021430114, w: 0.99977034}
-      scale: {x: 1, y: 1, z: 1}
-    - name: head
-      parentName: body
-      position: {x: -1.3969838e-11, y: 0.004982483, z: -2.0954757e-11}
-      rotation: {x: 9.313226e-10, y: -0.00000012328383, z: -6.984917e-10, w: 1}
-      scale: {x: 1.0000001, y: 1, z: 1}
-    - name: head_end
-      parentName: head
-      position: {x: -0, y: 0.0033568623, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arm.l
-      parentName: body
-      position: {x: -5.5879353e-11, y: 0.0046754465, z: -0.0036632752}
-      rotation: {x: 0.6231933, y: -0.37160116, z: 0.5436457, w: -0.42189106}
-      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999991}
-    - name: arm.l_end
-      parentName: arm.l
-      position: {x: -0, y: 0.0046351445, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arm.r
-      parentName: body
-      position: {x: -3.352761e-10, y: 0.0046754465, z: 0.0036632754}
-      rotation: {x: 0.51576895, y: 0.4933906, z: 0.5772233, w: 0.396688}
-      scale: {x: 1, y: 1.0000001, z: 1.0000024}
-    - name: arm.r_end
-      parentName: arm.r
-      position: {x: -0, y: 0.0046351454, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -164,7 +95,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: control
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -172,7 +103,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

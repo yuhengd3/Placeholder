@@ -19,11 +19,10 @@ public class enemy : MonoBehaviour
     private FieldOfView fov;
     private static int meleeHash = Animator.StringToHash("Melee");
     private static int swordHash = Animator.StringToHash("Sword");
-    private static int zombieHash = Animator.StringToHash("Zombie");
     private static int walkHash = Animator.StringToHash("Walking");
     private static int rightHash = Animator.StringToHash("RightTurn");
     private static int leftHash = Animator.StringToHash("LeftTurn");
-    private static int[] attacks = { meleeHash, swordHash, zombieHash };
+    private static int[] attacks = { meleeHash, swordHash};
     private bool face_ = false;
     public Transform player;
     public float rotspeed = 1f;
